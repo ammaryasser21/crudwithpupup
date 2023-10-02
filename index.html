@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Overlay -->
+    <div id="overlay"></div>
+    <!-- Adding-model -->
+    <div class="modal" id="Add-modal">
+      <div class="add-main">
+        <button data-close-button><i class="fas fa-close"></i></button>
+        <h2 id="h2-edit">اضافة منتج</h2>
+      </div>
+      <form>
+        <label for="name">اسم المنتج</label>
+        <input class="form-ctrl" type="text" id="name" name="name" />
+        <div class="SKU-label">
+          <i class="fas fa-question-circle"></i>
+          <label for="code">رمزSKU</label>
+        </div>
+        <input class="form-ctrl" type="number" id="code" name="code" />
+        <div class="buttons">
+          <button class="close" data-close-button>الغاء</button>
+          <button id="btnProAdd" class="btn-add">أضف الاّن</button>
+        </div>
+      </form>
+    </div>
+    <!-- Editing-model -->
+    <div class="modal" id="edit-modal">
+      <div class="add-main">
+        <button data-close-button><i class="fas fa-close"></i></button>
+        <h2>تعديل منتج</h2>
+      </div>
+      <form action="#">
+        <label for="name-edit">اسم المنتج</label>
+        <input
+          class="form-ctrl-edit"
+          type="text"
+          id="name-edit"
+          name="name-edit"
+        />
+        <div class="SKU-label">
+          <i class="fas fa-question-circle"></i>
+          <label for="code-edit">رمزSKU</label>
+        </div>
+        <input
+          class="form-ctrl-edit"
+          type="number"
+          id="code-edit"
+          name="code-edit"
+        />
+        <div class="buttons">
+          <button class="close" data-close-button>الغاء</button>
+          <button id="btnProEdit" class="btn-add">حفظ الأن</button>
+        </div>
+      </form>
+    </div>
+    <!-- Deleting-modal -->
+    <div class="modal" id="delete-modal">
+      <div class="delete-main">
+        <i class="fas fa-trash-can"></i>
+      </div>
+      <p>هل انت متاكد من حذف المنتج</p>
+      <div class="buttons-delete">
+        <button class="delete-close-btn" data-close-button>الغاء</button>
+        <button id="deleteRow" class="btn-delete" onclick="DeleteRow()">
+          نعم احذف
+        </button>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ -->
+    <!-- home-section -->
+    <div class="container">
+      <div class="main">
+        <button onclick="AddModel()">
+          اضف منتج<i class="fas fa-circle-plus"></i>
+        </button>
+        <div class="pro-main">
+          <p>منتجاتي</p>
+          <i class="fas fa-shopping-bag"></i>
+        </div>
+      </div>
+      <div id="totalProducts">0</div>
+      <div id="table-body"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@simondmc/popup-js@1.4.2/popup.min.js"></script>
+    <script src="script.js" async defer></script>
+  </body>
+</html>
