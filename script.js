@@ -139,3 +139,52 @@ function closeModal (modal){
 }
 
 
+// ********** Small validation ******************** //
+  
+
+
+
+let isInputFilled = false;
+NameInput.addEventListener("input", checkInputs);
+CodeInput.addEventListener("input", checkInputs);
+
+NameInput.addEventListener("keydown", () => {
+  isInputFilled = NameInput.value.trim() !== "";
+  checkInputs();
+});
+CodeInput.addEventListener("keydown", () => {
+  isInputFilled = CodeInput.value.trim() !== "";
+  checkInputs();
+});
+
+function checkInputs() {
+  if (isInputFilled) {
+   btnProAdd.disabled = false;
+   btnProAdd.style.backgroundColor = "#2f016a";
+  } else {
+   btnProAdd.disabled = true;
+   btnProAdd.style.backgroundColor = "#8d8d8d";
+  }
+}
+
+NameInput_edit.addEventListener("input", checkInputsEdit);
+CodeInput_edit.addEventListener("input", checkInputsEdit);
+
+NameInput_edit.addEventListener("keydown", () => {
+  isInputFilled = NameInput_edit.value.trim() !== "";
+  checkInputsEdit();
+});
+CodeInput_edit.addEventListener("keydown", () => {
+  isInputFilled = CodeInput_edit.value.trim() !== "";
+  checkInputsEdit();
+});
+
+function checkInputsEdit() {
+  if (isInputFilled) {
+   btnProEdit.disabled = false;
+   btnProEdit.style.backgroundColor = "#2f016a";
+  } else {
+   btnProEdit.disabled = true;
+   btnProEdit.style.backgroundColor = "#8d8d8d";
+  }
+}
